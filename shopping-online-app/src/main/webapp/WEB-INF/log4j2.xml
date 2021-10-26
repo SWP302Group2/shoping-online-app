@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG">
+    <Appenders>
+        <JDBC name="databaseAppender" tableName="logging">
+            <LevelRangeFilter minLevel="WARN" maxLevel="WARN" onMatch="ACCEPT" onMismatch="DENY"/>
+            <DataSource jndiName="java:/comp/env/webapp" />
+            <Column name="EVENT_DATE" isEventTimestamp="true" />
+            <Column name="LEVEL" pattern="%level" />
+            <Column name="LOGGER" pattern="%logger" />
+            <Column name="MSG" pattern="%message" />
+            <Column name="THROWABLE" pattern="$${ctx:THROWABLE}"/> 
+            <Column name="USER_ID" pattern = "$${ctx:USERID}"/>
+        </JDBC>
+        <RollingFile name="LogToFile1"  
+                     filePattern="${sys:PATH}logs\INFO-%d{yyyy-MM-dd}.log" >
+            <LevelRangeFilter minLevel="INFO" maxLevel="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout>
+                <Pattern>%d %p %c{10} [%t] %m%n</Pattern>
+            </PatternLayout>
+            <LevelRangeFilter minLevel="INFO" maxLevel="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+        <RollingFile name="LogToFile2" 
+                     filePattern="${sys:PATH}logs\ERROR-%d{yyyy-MM-dd}.log" > 
+            <LevelRangeFilter minLevel="ERROR" maxLevel="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout>
+                <Pattern>%d %p %c{10} [%t] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <!-- avoid duplicated logs with additivity=false -->
+        <Root level="debug" >
+            <AppenderRef ref="LogToFile1"/>
+            <AppenderRef ref="LogToFile2"/>
+            <AppenderRef ref="databaseAppender" />
+        </Root>
+    </Loggers>
+</Configuration>

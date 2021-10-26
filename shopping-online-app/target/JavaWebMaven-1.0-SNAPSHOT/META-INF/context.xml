@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/JavaWebMaven">
+    <Resource name="webapp" auth="Container" type="javax.sql.DataSource"
+              driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"  
+              url="jdbc:sqlserver://35.234.57.157;databaseName=BESTTEAM" 
+              username="sqlserver" password="12345678"/>
+</Context>

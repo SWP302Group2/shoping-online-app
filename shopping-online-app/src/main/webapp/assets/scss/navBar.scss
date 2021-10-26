@@ -1,0 +1,559 @@
+/* General used variable */
+$logo-color: #ffb347;
+$color-darkBlue: #355c7d;
+$navigationBar-color: #0f0c29;
+$feature-button-color: #11998e;
+$subMenu-color: #2c3e50;
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+/* Css from small to big: mobile > tablet > PC */
+
+/* Mobile */
+@media only screen and (min-width: 0px) {
+    .nav {
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+
+        display: flex;
+        width: 100%;
+        height: 50px;
+
+        background: $navigationBar-color;
+        box-shadow: 0 4px 8px 0 rgba($color: #000000, $alpha: 0.2);
+    }
+
+    .bars {
+        order: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 50px;
+        height: 100%;
+        margin-left: 1px;
+
+        color: #fff;
+        outline: none;
+        font-size: 1.2rem;
+
+        &__icon {
+            outline: none;
+        }
+
+        &:hover,
+        &:focus {
+            cursor: pointer;
+            height: 46px;
+            border: 1px solid #fff;
+            border-radius: 3px;
+        }
+    }
+
+    .logo {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 100%;
+        margin-right: 0.5rem;
+
+        &__link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            height: 100%;
+            padding: 0 1rem;
+            outline: none;
+            border: none;
+
+            color: $logo-color;
+            background: $navigationBar-color;
+
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+    }
+
+    .left {
+        position: absolute;
+        top: 50px;
+        left: 0;
+
+        display: none;
+        flex-flow: column nowrap;
+        overflow: hidden;
+        width: 100%;
+        background: $subMenu-color;
+
+        animation: show 0.5s;
+
+        &__feature {
+            width: 100%;
+            height: 3rem;
+            box-shadow: 0 -1px 0 0 rgba($color: #fff, $alpha: 0.2);
+        }
+
+        &__link {
+            display: flex;
+            align-items: center;
+
+            color: #fff;
+            font-weight: 400;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            width: 100%;
+            height: 100%;
+            padding-left: 1rem;
+            border: none;
+
+            &:hover,
+            &:focus {
+                background: $feature-button-color;
+                border: none;
+            }
+        }
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        order: 2;
+        height: 100%;
+        max-height: 100%;
+        margin-right: 1px;
+
+        &__welcome-user {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            height: 46px;
+            max-height: 100%;
+            border-radius: 3px;
+            padding: 0 1rem;
+            border: 1px solid $navigationBar-color;
+
+            &:hover,
+            &:focus {
+                cursor: pointer;
+                border: 1px solid #fff;
+            }
+        }
+
+        &__welcome-user:hover &__icon-background {
+            background: #fff;
+        }
+
+        &__icon-background {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 2rem;
+            height: 2rem;
+            max-height: 100%;
+            border-radius: 50%;
+
+            color: $navigationBar-color;
+            background: #ddd;
+        }
+
+        &__subnav {
+            position: absolute;
+            top: 50px;
+            right: 1rem;
+            z-index: 2;
+
+            display: none;
+            max-width: calc(100vw - 2rem);
+            border-radius: 0 1rem;
+
+            background: $navigationBar-color;
+            box-shadow: 0 0 8px 0 rgba($color: #000, $alpha: 0.3);
+            animation: show 0.5s;
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+
+                width: 50%;
+                height: 50%;
+                border-bottom-left-radius: 16px;
+
+                box-shadow: -4px 2px 2px 0 rgb(255, 174, 0);
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: -1;
+
+                width: 50%;
+                height: 50%;
+                border-top-right-radius: 1rem;
+
+                box-shadow: 4px -2px 2px 0 rgb(9, 252, 1);
+            }
+        }
+
+        &__not-login {
+            display: flex;
+            flex-flow: column nowrap;
+            overflow: hidden;
+
+            width: 10rem;
+            border-radius: 0 1rem;
+
+            &__link {
+                display: flex;
+                align-items: center;
+
+                width: 100%;
+                height: 3rem;
+                padding: 2rem;
+
+                font-size: 1rem;
+                text-transform: capitalize;
+                text-decoration: none;
+                outline: none;
+
+                color: #fff;
+
+                &:hover,
+                &:focus {
+                    cursor: pointer;
+                    background: #5c96ad;
+                }
+            }
+
+            &__icon {
+                width: 1rem;
+                margin-right: 0.5rem;
+            }
+        }
+
+        &__logged-in {
+            display: flex;
+            flex-flow: column nowrap;
+            overflow: hidden;
+
+            width: calc(100vw - 2rem);
+            border-radius: 0 16px;
+            background: $subMenu-color;
+
+            &__user {
+                display: flex;
+                flex-flow: column nowrap;
+
+                width: 100%;
+                max-width: 100%;
+                padding: 0.5rem;
+                border-radius: 16px;
+
+                &--information {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    flex-flow: column nowrap;
+
+                    width: 100%;
+                    max-width: 100%;
+                    padding: 0.5rem;
+
+                    color: #fff;
+                }
+
+                &--actions {
+                    display: flex;
+                    align-items: center;
+                    flex-flow: row wrap;
+
+                    padding: 0.5rem;
+                    width: 100%;
+                    max-width: 100%;
+                }
+
+                &--headline {
+                    width: 100%;
+                    max-width: 100%;
+                    margin-bottom: 0.5rem;
+                    padding-left: 0.5rem;
+
+                    color: #fff;
+
+                    font-weight: 600;
+                    font-size: 1.5rem;
+                    text-align: left;
+                    text-decoration: underline;
+                    text-underline-offset: 4px;
+                    text-decoration-thickness: 2px;
+
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            &__avatar {
+                height: 6rem;
+                width: 6rem;
+                max-width: 100%;
+                border-radius: 50%;
+            }
+
+            &__name {
+                width: 100%;
+                margin-top: 0.5rem;
+
+                font-size: 0.8rem;
+                font-weight: 700;
+                text-align: center;
+
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            &__email {
+                width: 100%;
+                margin-top: 0.5rem;
+
+                font-size: 0.8rem;
+                font-weight: 500;
+                text-align: center;
+
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            &__link {
+                color: #fff;
+                font-size: 1rem;
+                text-decoration: none;
+
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                &--action {
+                    display: flex;
+                    align-items: center;
+
+                    width: 50%;
+                    max-width: 50%;
+                    height: 3rem;
+                    padding-left: 0.5rem;
+                    margin: 0.5rem 0;
+
+                    &:hover {
+                        background: $navigationBar-color;
+                    }
+                }
+
+                &--switch,
+                &--logout {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    height: 100%;
+                    width: 50%;
+                    max-width: 100%;
+
+                    &:hover {
+                        background: $navigationBar-color;
+                    }
+                }
+            }
+
+            &__icon {
+                margin-right: 0.5rem;
+            }
+
+            &__bottom {
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: space-between;
+
+                width: 100%;
+                height: 4rem;
+                border-top: 1px solid rgba($color: #fff, $alpha: 0.6);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .left {
+        position: absolute;
+        top: 50px;
+        left: 0;
+
+        display: none;
+        flex-flow: column nowrap;
+        width: 50%;
+        max-width: 400px;
+
+        background: $subMenu-color;
+        box-shadow: 0 0 2px 2px rgba($color: #000000, $alpha: 0.2);
+
+        &__feature {
+            width: 100%;
+            height: 3rem;
+        }
+
+        &__link {
+            justify-content: flex-start;
+
+            padding-left: 1.2rem;
+            width: 100%;
+            height: 100%;
+            border: none;
+
+            &:hover,
+            &:focus {
+                background: $feature-button-color;
+                border: none;
+            }
+        }
+    }
+
+    .right {
+
+        &__logged-in {
+            width: 400px;
+
+            &__user {
+                flex-flow: row nowrap;
+
+                &--information {
+                    width: 50%;
+                    max-width: 50%;
+                    border-right: 1px solid rgba($color: #fff, $alpha: 0.6);
+                }
+
+                &--actions {
+                    flex-flow: column nowrap;
+                    width: 50%;
+                    max-width: 50%;
+                }
+
+                &--headline {
+                    width: 100%;
+                }
+            }
+
+            &__link {
+                color: #fff;
+                text-decoration: none;
+
+                &--action {
+                    width: 100%;
+                    max-width: 100%;
+                    margin: 0;
+                }
+
+            }
+
+            &__bottom {
+                height: 3rem;
+            }
+        }
+
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .nav {
+        justify-content: flex-start;
+    }
+
+    .bars {
+        display: none;
+    }
+    .logo {
+        position: initial;
+        transform: translate(0);
+
+        height: 2rem;
+        border-right: 1px solid rgba($color: #fff, $alpha: 0.5);
+    }
+
+    .left {
+        position: static;
+
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-start;
+
+        background: $navigationBar-color;
+        box-shadow: none;
+
+        width: 100%;
+        max-width: none;
+        height: 100%;
+
+        animation: none;
+
+        &__feature {
+            height: 100%;
+            width: fit-content;
+            margin-left: 0.5rem;
+
+            &:hover {
+                border-bottom: 1px solid #fff;
+            }
+        }
+        &__link {
+            justify-content: center;
+            height: 100%;
+            padding: 0 1rem;
+        }
+    }
+
+    .right {
+        height: 2rem;
+        padding: 0 1rem;
+        border-left: 1px solid rgba($color: #fff, $alpha: 0.5);
+    }
+}
+
+@keyframes show {
+    from {
+        height: 0;
+        opacity: 0;
+    }
+
+    to {
+        height: fit-content;
+        opacity: 1;
+    }
+}

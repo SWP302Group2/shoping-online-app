@@ -1,0 +1,17 @@
+
+home
+Home
+homeJSP
+supportJSP
+logout
+profile
+updateProfile
+profileJSP
+shop
+shopJSP
+searchProduct
+updateCart
+viewCart
+viewCartJSP
+login
+signup

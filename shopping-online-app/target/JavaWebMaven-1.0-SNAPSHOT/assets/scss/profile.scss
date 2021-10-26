@@ -1,0 +1,295 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    background: #000;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.header {
+    width: 100%;
+    height: 50px;
+}
+
+.contents {
+    display: flex;
+    flex-flow: row nowrap;
+
+    width: 100%;
+    min-height: calc(100vh - 50px);
+    background: #fff;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    width: 70%;
+    padding: 1rem 5%;
+
+    &__avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        margin-bottom: 1rem;
+    }
+
+    &__headline {
+        width: 100%;
+        min-height: fit-content;
+        margin-bottom: 1rem;
+
+        text-transform: capitalize;
+        text-align: left;
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+
+    &__account-information {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-flow: column nowrap;
+
+        width: 100%;
+        border-top: 1px solid rgba($color: #355c7d, $alpha: 0.5);
+        border-bottom: 1px solid rgba($color: #355c7d, $alpha: 0.5);
+    }
+
+    &__line {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-flow: row nowrap;
+
+        width: 100%;
+        min-height: 4rem;
+        border-bottom: 1px solid rgba($color: #355c7d, $alpha: 0.1);
+
+        &:hover,
+        &:focus-within {
+            border-radius: 4px;
+            background: #eee;
+            transition: 0.5s linear;
+        }
+
+        &__label {
+            width: 30%;
+            padding-left: 0.5rem;
+
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        &__value {
+            width: 60%;
+            padding: 0 0.5rem;
+
+            font-size: 1rem;
+        }
+
+        &__link {
+            width: 10%;
+            padding-left: 0.5rem;
+
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__update {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-flow: column nowrap;
+
+        width: 100%;
+        border-radius: 4px;
+        overflow: hidden;
+
+        background: #eee;
+
+        &__headline {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+
+            text-align: left;
+            font-weight: 500;
+            font-size: 1rem;
+            text-transform: capitalize;
+        }
+
+        &__form {
+            display: flex;
+            flex-flow: column nowrap;
+            width: 100%;
+            padding: 1rem;
+        }
+
+        &__control {
+            display: flex;
+
+            width: 100%;
+            margin-bottom: 0.5rem;
+
+            &--input {
+                flex-flow: column nowrap;
+                max-width: 400px;
+            }
+
+            &--button {
+                align-items: center;
+                justify-content: flex-start;
+                flex-flow: row-reverse nowrap;
+
+                margin-top: 0.5rem;
+            }
+        }
+
+        &__input {
+            outline: none;
+            border: none;
+            border: 1px solid rgba($color: #355c7d, $alpha: 0.3);
+            border-radius: 3px;
+
+            width: 100%;
+            height: 2rem;
+            padding-left: 0.5rem;
+
+            font-size: 1rem;
+
+            &:hover,
+            &:focus {
+                border: 1px solid rgba($color: #355c7d, $alpha: 1);
+            }
+        }
+
+        &__button {
+            min-width: 80px;
+            height: 2rem;
+            border-radius: 3px;
+            border: none;
+            outline: none;
+            background: none;
+            cursor: pointer;
+
+            background: linear-gradient(170deg, #355c7d, #355c7d, #355c7d);
+            color: #fff;
+
+            font-size: 1rem;
+
+            &:hover,
+            &:focus {
+                background: linear-gradient(170deg, #277fcc, #458ece, #2a54af);
+            }
+
+            &--close {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+
+                margin-right: 0.5rem;
+
+                background: #ccc;
+                color: #555;
+
+                &:hover {
+                    color: #ccc;
+                    background: #555;
+                }
+            }
+        }
+
+        &__message {
+            display: inline-block;
+            width: 100%;
+
+            text-align: justify;
+            word-break: break-all;
+
+            &--error {
+                color: #ff3232;
+                font-size: 0.8rem;
+            }
+
+            &--succeed {
+                color: #24ac17;
+                font-size: 1rem;
+            }
+
+            &--fail {
+                color: #ff3232;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+.menu {
+    display: flex;
+    flex-flow: column nowrap;
+
+    width: 30%;
+    height: 100%;
+    padding: 0.5rem;
+    padding-top: 2rem;
+    box-shadow: -1px 0 2px 2px rgba($color: #000000, $alpha: 0.1);
+
+    &__area {
+        display: flex;
+        flex-flow: column nowrap;
+
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    &__headline {
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        height: 2rem;
+        padding: 0 4px;
+
+        background: #ddd;
+
+        text-align: left;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+
+    &__list {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-flow: column nowrap;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        height: 2rem;
+        padding: 0 4px;
+
+        &:hover {
+            background: #eee;
+            cursor: pointer;
+        }
+    }
+}

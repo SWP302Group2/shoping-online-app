@@ -1,0 +1,210 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  width: 100vw;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  height: 100vh;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+}
+
+body {
+  width: 100vw;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  height: 100vh;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, #4568dc, #b06ab3);
+}
+
+.header {
+  width: 100%;
+  height: 50px;
+}
+
+.contents {
+  width: 100%;
+  height: calc(100% - 50px);
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-animation: turnOffBg 6s;
+          animation: turnOffBg 6s;
+}
+
+.contents__headline {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 350px;
+  height: 6rem;
+  max-width: calc(100% - 2rem);
+  color: #255784;
+  background: #01fff4;
+  -webkit-box-shadow: 0 0 10px #01fff4, 0 0 20px #01fff4;
+          box-shadow: 0 0 10px #01fff4, 0 0 20px #01fff4;
+  font-size: 2rem;
+  font-weight: 500;
+  -webkit-animation: processTheText 5s, lightTheBorder 5s, lightTheButtonBg 5s;
+          animation: processTheText 5s, lightTheBorder 5s, lightTheButtonBg 5s;
+}
+
+.contents__headline:hover {
+  cursor: pointer;
+}
+
+@-webkit-keyframes processTheText {
+  from {
+    color: transparent;
+  }
+  30% {
+    color: transparent;
+  }
+  80% {
+    color: #01fff4;
+  }
+  to {
+    color: #255784;
+  }
+}
+
+@keyframes processTheText {
+  from {
+    color: transparent;
+  }
+  30% {
+    color: transparent;
+  }
+  80% {
+    color: #01fff4;
+  }
+  to {
+    color: #255784;
+  }
+}
+
+@-webkit-keyframes lightTheBorder {
+  from {
+    border: 1px solid transparent;
+  }
+  50% {
+    border: 2px solid #01fff4;
+  }
+  to {
+    border: 4px solid #01fff4;
+  }
+}
+
+@keyframes lightTheBorder {
+  from {
+    border: 1px solid transparent;
+  }
+  50% {
+    border: 2px solid #01fff4;
+  }
+  to {
+    border: 4px solid #01fff4;
+  }
+}
+
+@-webkit-keyframes lightTheButtonBg {
+  from {
+    -webkit-box-shadow: 0 0 0 transparent;
+            box-shadow: 0 0 0 transparent;
+    background: transparent;
+  }
+  50% {
+    -webkit-box-shadow: 0 0 0 transparent;
+            box-shadow: 0 0 0 transparent;
+    background: transparent;
+  }
+  to {
+    background: #01fff4;
+    -webkit-box-shadow: 0 0 10px #01fff4, 0 0 20px #01fff4, 0 0 40px #01fff4;
+            box-shadow: 0 0 10px #01fff4, 0 0 20px #01fff4, 0 0 40px #01fff4;
+  }
+}
+
+@keyframes lightTheButtonBg {
+  from {
+    -webkit-box-shadow: 0 0 0 transparent;
+            box-shadow: 0 0 0 transparent;
+    background: transparent;
+  }
+  50% {
+    -webkit-box-shadow: 0 0 0 transparent;
+            box-shadow: 0 0 0 transparent;
+    background: transparent;
+  }
+  to {
+    background: #01fff4;
+    -webkit-box-shadow: 0 0 10px #01fff4, 0 0 20px #01fff4, 0 0 40px #01fff4;
+            box-shadow: 0 0 10px #01fff4, 0 0 20px #01fff4, 0 0 40px #01fff4;
+  }
+}
+
+@-webkit-keyframes turnOffBg {
+  from {
+    background: #000;
+  }
+  50% {
+    background: #000;
+  }
+  to {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@keyframes turnOffBg {
+  from {
+    background: #000;
+  }
+  50% {
+    background: #000;
+  }
+  to {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  #home {
+    /*Display*/
+    border-bottom: 1px solid #fff;
+    /*Color*/
+    background: #11998e;
+    /*Text*/
+    font-weight: 500;
+  }
+}
+/*# sourceMappingURL=home.css.map */

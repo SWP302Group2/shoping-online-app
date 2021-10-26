@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-Clean and Install</actionName>
+            <displayName>Clean and Install</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-Clean and Install, undeploy and then deploy</actionName>
+            <displayName>Clean and Install, undeploy and then deploy</displayName>
+            <goals>
+                <goal>tomcat7:undeploy</goal>
+                <goal>clean</goal>
+                <goal>install</goal>
+                <goal>tomcat7:deploy</goal>
+            </goals>
+        </action>
+    </actions>

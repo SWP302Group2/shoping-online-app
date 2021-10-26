@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1">
+    <style>
+        div {
+            width: 400px;
+            height: 130px;
+            border: 2px solid black;
+            padding: 15px;
+            position: absolute;
+            left: 27%;
+        }
+    </style>
+</head>
+  
+<body>
+    <div class="filter__control filter__control--check">
+        <label class="filter__label filter__label--check">Sort</label>
+        <input class="filter__input filter__input--check"  
+               type="checkbox" name="txtOrder" value="By price">
+        <input class="filter__input filter__input--check"  
+               type="checkbox" name="txtOrder" value="By reverse price">
+        <input class="filter__input filter__input--check"  
+               type="checkbox" name="txtOrder" value="By name">
+    </div>
+</body>
+<script>
+    function onlyNumberKey(evt) {
+          
+        // Only ASCII character in that range allowed
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
+    }
+</script>
+<script>
+    function detailssubmit() {
+        alert("Your details were Submitted");
+    }
+</script>
+  
+</html>
